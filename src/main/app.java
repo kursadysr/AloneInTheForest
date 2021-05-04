@@ -21,9 +21,6 @@ public class app {
 		f.setSize(500, 300);
 		f.setLayout(null);
 		f.setVisible(true);
-		//test comment
-		//??
-		//333
 
 	}
 
