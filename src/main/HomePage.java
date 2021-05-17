@@ -66,13 +66,18 @@ public class HomePage {
 		btnNewButton_3.setBounds(245, 245, 130, 30);
 		frame.getContentPane().add(btnNewButton_3);
 		
+		JProgressBar progressBar = new JProgressBar();
+		progressBar.setToolTipText("");
+		progressBar.setStringPainted(true);
+		progressBar.setValue(45);
+		progressBar.setBounds(10, 170, 145, 20);
+		frame.getContentPane().add(progressBar);
+		
 		JLabel lblNewLabel = new JLabel("",img, JLabel.CENTER);
 		lblNewLabel.setBounds(0, 0, 510, 320);
 		frame.getContentPane().add(lblNewLabel);
 		
-		JProgressBar progressBar = new JProgressBar();
-		progressBar.setBounds(0, 155, 145, 20);
-		frame.getContentPane().add(progressBar);
+		
 		
 		
 
