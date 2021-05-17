@@ -10,6 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.JPanel;
+import javax.swing.JProgressBar;
 
 public class HomePage {
 
@@ -71,6 +72,10 @@ public class HomePage {
 		JLabel lblNewLabel = new JLabel("",img, JLabel.CENTER);
 		lblNewLabel.setBounds(0, 0, 510, 320);
 		frame.getContentPane().add(lblNewLabel);
+		
+		JProgressBar progressBar = new JProgressBar();
+		progressBar.setBounds(0, 154, 146, 20);
+		frame.getContentPane().add(progressBar);
 		
 		
 
