@@ -70,17 +70,32 @@ public class HomePage {
 		progressBar.setToolTipText("");
 		progressBar.setStringPainted(true);
 		progressBar.setValue(45);
-		progressBar.setBounds(10, 170, 145, 20);
+		progressBar.setBounds(10, 190, 145, 20);
 		frame.getContentPane().add(progressBar);
 		
+		
+		JProgressBar progressBar_1 = new JProgressBar();
+		progressBar_1.setStringPainted(true);
+		progressBar_1.setValue(55);
+		progressBar_1.setBounds(10, 215, 145, 20);
+		frame.getContentPane().add(progressBar_1);
+		
+		JProgressBar progressBar_2 = new JProgressBar();
+		progressBar_2.setValue(65);
+		progressBar_2.setStringPainted(true);
+		progressBar_2.setBounds(10, 235, 145, 20);
+		frame.getContentPane().add(progressBar_2);
+		
+		JProgressBar progressBar_3 = new JProgressBar();
+		progressBar_3.setValue(75);
+		progressBar_3.setStringPainted(true);
+		progressBar_3.setBounds(10, 260, 145, 20);
+		frame.getContentPane().add(progressBar_3);
+		
+		
 		JLabel lblNewLabel = new JLabel("",img, JLabel.CENTER);
-		lblNewLabel.setBounds(0, 0, 510, 320);
+		lblNewLabel.setBounds(0, 0, 500, 320);
 		frame.getContentPane().add(lblNewLabel);
-		
-		
-		
-		
-
 		frame.setBounds(100, 100, 500, 320);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
