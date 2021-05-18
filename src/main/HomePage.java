@@ -47,7 +47,7 @@ public class HomePage {
 		frame = new JFrame();
 		frame.setResizable(false);
 		frame.getContentPane().setLayout(null);
-		ImageIcon img = new ImageIcon("images/background.png");
+		ImageIcon img = new ImageIcon("images/background.jpeg");
 		
 		JButton btnNewButton = new JButton("Inventory");
 		btnNewButton.setToolTipText("");
