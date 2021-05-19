@@ -11,7 +11,7 @@ import java.awt.Color;
 import javax.swing.SwingConstants;
 import javax.swing.border.EtchedBorder;
 
-public class Signin {
+public class Signup {
 
 	private JFrame frame;
 	private JTextField textField;
@@ -22,11 +22,11 @@ public class Signin {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void create() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Signin window = new Signin();
+					Signup window = new Signup();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -38,7 +38,7 @@ public class Signin {
 	/**
 	 * Create the application.
 	 */
-	public Signin() {
+	public Signup() {
 		initialize();
 	}
 
@@ -101,7 +101,7 @@ public class Signin {
 		textField_3.setBounds(240, 154, 130, 25);
 		frame.getContentPane().add(textField_3);
 		
-		JButton btnNewButton = new JButton("Sign-In");
+		JButton btnNewButton = new JButton("Sign-Up");
 		btnNewButton.setBounds(183, 190, 110, 30);
 		frame.getContentPane().add(btnNewButton);
 		

@@ -10,6 +10,8 @@ import javax.swing.JButton;
 import java.awt.Color;
 import javax.swing.SwingConstants;
 import javax.swing.border.EtchedBorder;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class Login {
 
@@ -20,7 +22,7 @@ public class Login {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void create() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -74,11 +76,25 @@ public class Login {
 		frame.getContentPane().add(textField_1);
 		textField_1.setColumns(10);
 		
-		JButton btnNewButton = new JButton("Sign-In");
+		JButton btnNewButton = new JButton("Sign-Up");
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				frame.setVisible(false);
+				Signup.create();
+			}
+		});
 		btnNewButton.setBounds(120, 200, 110, 30);
 		frame.getContentPane().add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Log-In");
+		btnNewButton_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				frame.setVisible(false);
+				HomePage.create();
+			}
+		});
 		btnNewButton_1.setBounds(270, 200, 110, 30);
 		frame.getContentPane().add(btnNewButton_1);
 		
