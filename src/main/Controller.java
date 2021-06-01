@@ -18,6 +18,7 @@ import java.sql.Statement;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
+    public static String passedUsername;
     @FXML
     private Button loginButton;
     @FXML
@@ -45,6 +46,8 @@ public class Controller implements Initializable {
             ResultSet result = st.executeQuery(query);
             result.next();
             if (username.equals(result.getString("name")) && password.equals(result.getString("password"))) {
+                passedUsername = result.getString("name");
+                System.out.println(passedUsername);
                 homePage();
                 String toastMsg = "Successfully logged in";
                 int toastMsgTime = 3500; //3.5 seconds
