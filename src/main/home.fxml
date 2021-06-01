@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.Home">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="560.0" pickOnBounds="true">
+         <image>
+            <Image url="@../images/background.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="36.0" fitWidth="37.0" layoutX="498.0" layoutY="214.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/rock4.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="93.0" fitWidth="153.0" layoutX="421.0" layoutY="299.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/rock1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="78.0" layoutX="194.0" layoutY="266.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/rock6.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="400.0" layoutY="200.0" minHeight="50.0" minWidth="125.0" mnemonicParsing="false" style="-fx-background-color: rgba(16, 10, 4, 0.59)rgba(16, 10, 4, 0.59); -fx-background-radius: 10;" text="Move" textFill="#95d115">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="400.0" layoutY="260.0" minHeight="50.0" minWidth="125.0" mnemonicParsing="false" style="-fx-background-color: rgba(16, 10, 4, 0.59)rgba(16, 10, 4, 0.59); -fx-background-radius: 10;" text="Explore" textFill="#95d115">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="260.0" layoutY="320.0" minHeight="50.0" minWidth="125.0" mnemonicParsing="false" style="-fx-background-color: rgba(16, 10, 4, 0.59)rgba(16, 10, 4, 0.59); -fx-background-radius: 10;" text="Sleep" textFill="#95d115">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="400.0" layoutY="320.0" minHeight="50.0" minWidth="125.0" mnemonicParsing="false" style="-fx-background-color: rgba(16, 10, 4, 0.59)rgba(16, 10, 4, 0.59); -fx-background-radius: 10;" text="Inventory" textFill="#95d115">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Pane layoutY="190.0" prefHeight="200.0" prefWidth="240.0">
+         <children>
+            <ProgressBar fx:id="energyProgressBar" layoutX="30.0" layoutY="110.0" prefHeight="15.0" prefWidth="200.0" progress="1.0" />
+            <ProgressBar fx:id="foodProgressBar" layoutX="30.0" layoutY="140.0" prefHeight="15.0" prefWidth="200.0" progress="1.0" />
+            <ProgressBar fx:id="waterProgressBar" layoutX="30.0" layoutY="170.0" prefHeight="15.0" prefWidth="200.0" progress="1.0" />
+            <ImageView fx:id="hearthIcon" fitHeight="20.0" fitWidth="20.0" layoutX="5.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/heart.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="5.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/atom.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="5.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/wheat.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="5.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/water.png" />
+               </image>
+            </ImageView>
+            <ProgressBar fx:id="healthProgressBar" layoutX="30.0" layoutY="80.0" prefHeight="15.0" prefWidth="200.0" progress="1.0" />
+            <Label alignment="CENTER" layoutX="81.0" layoutY="35.0" prefHeight="23.0" prefWidth="78.0" style="-fx-background-color: rgba(16, 10, 4, 0.59)rgba(16, 10, 4, 0.59) rgba(16, 10, 4, 0.59)rgba(16, 10, 4, 0.59); -fx-background-radius: 10;" text="Username" textAlignment="CENTER" textFill="#33ff00fc" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <effect>
+                  <Bloom />
+               </effect>
+            </Label>
+            <ImageView fitHeight="59.0" fitWidth="58.0" layoutX="8.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/rock2.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <ImageView fitHeight="56.0" fitWidth="90.0" layoutX="310.0" layoutY="157.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/lake.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="66.0" layoutX="207.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/rock3.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
