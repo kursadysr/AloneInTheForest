@@ -6,25 +6,18 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLDataException;
 import java.sql.Statement;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
     public static String passedUsername;
-    @FXML
-    private Button loginButton;
-    @FXML
-    private Button signupButton;
-    @FXML
-    private Button registerButton;
     @FXML
     private TextField usernameField;
     @FXML
@@ -71,44 +64,44 @@ public class Controller implements Initializable {
             int fadeOutTime= 500; //0.5 seconds
             Toast.makeText(null, toastMsg, toastMsgTime, fadeInTime, fadeOutTime);
         } catch (Exception e) {
-            System.out.println(e);
+            System.out.println("e");
         }
     }
 
     public void loginPage(ActionEvent actionEvent) {
         try {
-            Parent root = FXMLLoader.load(main.Main.class.getResource("login.fxml"));
+            Parent root = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("login.fxml")));
             Main.primaryStage.setTitle("Log In");
             Main.primaryStage.setScene(new Scene(root, 560, 400));
             Main.primaryStage.setResizable(false);
             Main.primaryStage.show();
         } catch (Exception e){
-            System.out.println(e);
+            System.out.println("e");
         }
     }
 
     public void homePage() {
         try {
-            Parent root = FXMLLoader.load(main.Main.class.getResource("home.fxml"));
+            Parent root = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("home.fxml")));
             Main.primaryStage.setTitle("Alone In The Forest");
             Main.primaryStage.setScene(new Scene(root, 560, 400));
             Main.primaryStage.setResizable(false);
             Main.primaryStage.show();
         } catch (Exception e){
-            System.out.println(e);
+            System.out.println("e");
         }
     }
 
     public void signup(ActionEvent actionEvent) {
         try {
             System.out.println(getClass().toString());
-            Parent root = FXMLLoader.load(getClass().getResource("register.fxml"));
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("register.fxml")));
             Main.primaryStage.setTitle("Register");
             Main.primaryStage.setScene(new Scene(root, 560, 400));
             Main.primaryStage.setResizable(false);
             Main.primaryStage.show();
         } catch (Exception e ){
-            System.out.println(e);
+            System.out.println("e");
         }
 
     }
@@ -123,7 +116,7 @@ public class Controller implements Initializable {
             System.out.println(""+st.executeUpdate(query));
             System.out.println(username);
             st.close();
-            Parent root = FXMLLoader.load(main.Main.class.getResource("login.fxml"));
+            Parent root = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("login.fxml")));
             Main.primaryStage.setTitle("Log In");
             Main.primaryStage.setScene(new Scene(root, 560, 400));
             Main.primaryStage.setResizable(false);
@@ -135,7 +128,7 @@ public class Controller implements Initializable {
             Toast.makeText(null, toastMsg, toastMsgTime, fadeInTime, fadeOutTime);
 
         } catch (Exception e) {
-            System.out.println(e);
+            System.out.println("e");
         }
 
     }

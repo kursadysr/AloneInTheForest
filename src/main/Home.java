@@ -4,9 +4,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.image.ImageView;
-import javafx.stage.Stage;
-import javafx.event.ActionEvent;
-import javafx.scene.control.Button;
 
 import java.net.URL;
 import java.sql.ResultSet;
@@ -54,7 +51,7 @@ public class Home implements Initializable {
             foodProgressBar.setProgress((double) result.getInt("hunger")/100);
             waterProgressBar.setProgress((double) result.getInt("thirst")/100);
         } catch (Exception e) {
-
+            System.out.println("r");
         }
     }
 }
