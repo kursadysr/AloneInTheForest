@@ -45,6 +45,7 @@ public class Controller implements Initializable {
             ResultSet result = st.executeQuery(query);
             result.next();
             if (username.equals(result.getString("name")) && password.equals(result.getString("password"))) {
+                homePage();
                 String toastMsg = "Successfully logged in";
                 int toastMsgTime = 3500; //3.5 seconds
                 int fadeInTime = 500; //0.5 seconds
@@ -52,7 +53,11 @@ public class Controller implements Initializable {
                 Toast.makeText(null, toastMsg, toastMsgTime, fadeInTime, fadeOutTime);
             }
             else {
-                System.out.println("Error");
+                String toastMsg = "You entered invalid username or password. Please try again";
+                int toastMsgTime = 3500; //3.5 seconds
+                int fadeInTime = 500; //0.5 seconds
+                int fadeOutTime= 500; //0.5 seconds
+                Toast.makeText(null, toastMsg, toastMsgTime, fadeInTime, fadeOutTime);
             }
 
             st.close();
@@ -71,6 +76,18 @@ public class Controller implements Initializable {
         try {
             Parent root = FXMLLoader.load(main.Main.class.getResource("login.fxml"));
             Main.primaryStage.setTitle("Log In");
+            Main.primaryStage.setScene(new Scene(root, 560, 400));
+            Main.primaryStage.setResizable(false);
+            Main.primaryStage.show();
+        } catch (Exception e){
+            System.out.println(e);
+        }
+    }
+
+    public void homePage() {
+        try {
+            Parent root = FXMLLoader.load(main.Main.class.getResource("home.fxml"));
+            Main.primaryStage.setTitle("Alone In The Forest");
             Main.primaryStage.setScene(new Scene(root, 560, 400));
             Main.primaryStage.setResizable(false);
             Main.primaryStage.show();
