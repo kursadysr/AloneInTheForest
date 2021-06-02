@@ -14,7 +14,7 @@ public class Main extends Application {
     public static Connection db;
     public static Parent root;
     public static Stage primaryStage = new Stage();
-
+// This change for test
     @Override
     public void start(Stage primaryStage) throws Exception{
         started();
