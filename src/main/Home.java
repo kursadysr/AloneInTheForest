@@ -1,13 +1,20 @@
 package main;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.image.ImageView;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class Home implements Initializable {
@@ -26,6 +33,17 @@ public class Home implements Initializable {
     private ImageView hearthIcon;
     @FXML
     private Label usernameLabel;
+    @FXML
+    private Button exploreButton;
+
+    public void exploreButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("explore.fxml")));
+        Main.primaryStage.setTitle("Explore");
+        Main.primaryStage.setScene(new Scene(root, 560, 400));
+        Main.primaryStage.setResizable(false);
+        Main.primaryStage.show();
+    }
+
 
 
     @Override

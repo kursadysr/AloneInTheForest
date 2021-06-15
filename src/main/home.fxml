@@ -37,7 +37,7 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="400.0" layoutY="260.0" minHeight="50.0" minWidth="125.0" mnemonicParsing="false" style="-fx-background-color: rgba(16, 10, 4, 0.59)rgba(16, 10, 4, 0.59); -fx-background-radius: 10;" text="Explore" textFill="#95d115">
+      <Button fx:id="exploreButton" layoutX="400.0" layoutY="260.0" minHeight="50.0" minWidth="125.0" mnemonicParsing="false" onAction="#exploreButton" style="-fx-background-color: rgba(16, 10, 4, 0.59)rgba(16, 10, 4, 0.59); -fx-background-radius: 10;" text="Explore" textFill="#95d115">
          <font>
             <Font size="18.0" />
          </font>
