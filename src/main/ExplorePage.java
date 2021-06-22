@@ -14,7 +14,7 @@ import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class Explore implements Initializable {
+public class ExplorePage implements Initializable {
 
     @FXML
     private Button cutTreeButton;
@@ -39,7 +39,7 @@ public class Explore implements Initializable {
 
     public void homeButton(ActionEvent event){
         try {
-            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Home.fxml")));
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("homePage.fxml")));
             Main.primaryStage.setTitle("Home");
             Main.primaryStage.setScene(new Scene(root, 560, 400));
             Main.primaryStage.setResizable(false);
@@ -53,7 +53,7 @@ public class Explore implements Initializable {
 
         public void exploreButton(ActionEvent event){
             try {
-                Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("explore.fxml")));
+                Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("explorePage.fxml")));
                 Main.primaryStage.setTitle("Explore");
                 Main.primaryStage.setScene(new Scene(root, 560, 400));
                 Main.primaryStage.setResizable(false);

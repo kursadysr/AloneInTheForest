@@ -1,13 +1,19 @@
 package main;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class InventoryPage implements Initializable {
@@ -35,6 +41,8 @@ public class InventoryPage implements Initializable {
     private ImageView item9;
     @FXML
     private ImageView item10;
+    @FXML
+    private Button backButton;
 
     private Image apple = new Image(String.valueOf(getClass().getResource("../images/items/apple.png")));
     private Image axe = new Image(String.valueOf(getClass().getResource("../images/items/axe.png")));
@@ -58,7 +66,7 @@ public class InventoryPage implements Initializable {
                     "on characters.character_id = characters_has_items.character_id\n" +
                     "inner join items\n" +
                     "on items.item_id = characters_has_items.item_id\n" +
-                    "where name = \""+Controller.passedUsername+"\"\n" +
+                    "where name = \""+ LoginPage.passedUsername+"\"\n" +
                     "group by item_name;";
             ResultSet result = st.executeQuery(query);
             while(result.next()){
@@ -97,6 +105,19 @@ public class InventoryPage implements Initializable {
             }
         } catch (Exception e) {
             System.out.println(e);
+        }
+    }
+
+    public void backButton(ActionEvent actionEvent) {
+        try {
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("homePage.fxml")));
+            Main.primaryStage.setTitle("Home");
+            Main.primaryStage.setScene(new Scene(root, 560, 400));
+            Main.primaryStage.setResizable(false);
+            Main.primaryStage.show();
+        } catch (Exception e ){
+            System.out.println("e");
+
         }
     }
 }

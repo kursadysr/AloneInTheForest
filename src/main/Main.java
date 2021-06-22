@@ -21,7 +21,7 @@ public class Main extends Application {
     }
 
     public static void started() throws Exception{
-        root = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("login.fxml")));
+        root = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("loginPage.fxml")));
         primaryStage.setTitle("Log In");
         primaryStage.setScene(new Scene(root, 560, 400));
         primaryStage.setResizable(false);

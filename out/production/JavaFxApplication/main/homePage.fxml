@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.Home">
+<AnchorPane prefHeight="400.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.HomePage">
    <children>
       <ImageView fitHeight="400.0" fitWidth="560.0" pickOnBounds="true">
          <image>
@@ -42,7 +42,7 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="260.0" layoutY="320.0" minHeight="50.0" minWidth="125.0" mnemonicParsing="false" style="-fx-background-color: rgba(16, 10, 4, 0.59)rgba(16, 10, 4, 0.59); -fx-background-radius: 10;" text="Sleep" textFill="#95d115">
+      <Button fx:id="sleepButton" layoutX="260.0" layoutY="320.0" minHeight="50.0" minWidth="125.0" mnemonicParsing="false" onAction="#sleep" style="-fx-background-color: rgba(16, 10, 4, 0.59)rgba(16, 10, 4, 0.59); -fx-background-radius: 10;" text="Sleep" textFill="#95d115">
          <font>
             <Font size="18.0" />
          </font>
@@ -103,5 +103,6 @@
             <Image url="@../images/rock3.png" />
          </image>
       </ImageView>
+      <Button fx:id="logoutButton" layoutX="489.0" layoutY="14.0" mnemonicParsing="false" onAction="#logoutButton" text="Log Out" />
    </children>
 </AnchorPane>
