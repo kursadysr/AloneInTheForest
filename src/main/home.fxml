@@ -47,7 +47,7 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="400.0" layoutY="320.0" minHeight="50.0" minWidth="125.0" mnemonicParsing="false" style="-fx-background-color: rgba(16, 10, 4, 0.59)rgba(16, 10, 4, 0.59); -fx-background-radius: 10;" text="Inventory" textFill="#95d115">
+      <Button layoutX="400.0" layoutY="320.0" minHeight="50.0" minWidth="125.0" mnemonicParsing="false" onAction="#inventoryPage" style="-fx-background-color: rgba(16, 10, 4, 0.59)rgba(16, 10, 4, 0.59); -fx-background-radius: 10;" text="Inventory" textFill="#95d115">
          <font>
             <Font size="18.0" />
          </font>

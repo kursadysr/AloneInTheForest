@@ -36,27 +36,7 @@ public class InventoryTest implements Initializable {
 
 
     public void getItems(MouseEvent mouseEvent){
-        try {
-            Statement st = Main.db.createStatement();
-            String query = "Select name, item_name, count(item_name)\n" +
-                    "From characters\n" +
-                    "inner join characters_has_items\n" +
-                    "on characters.character_id = characters_has_items.character_id\n" +
-                    "inner join items\n" +
-                    "on items.item_id = characters_has_items.item_id\n" +
-                    "where name = \"Kursad\"\n" +
-                    "group by item_name;";
-            ResultSet result = st.executeQuery(query);
-            while(result.next()){
-                System.out.println(result.getString("name") + result.getString("item_name") + result.getInt("count(item_name)"));
-                if(result.getString("item_name").equals("Knife")){
-                    item00.setImage(knife);
-                    System.out.println("SET!!!");
-                }
-            }
-        } catch (Exception e) {
-            System.out.println(e);
-        }
+
     }
 
     @Override
