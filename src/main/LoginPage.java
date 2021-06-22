@@ -16,7 +16,7 @@ import java.sql.Statement;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class Controller implements Initializable {
+public class LoginPage implements Initializable {
     public static String passedUsername;
 
     @FXML
@@ -71,7 +71,7 @@ public class Controller implements Initializable {
 
     public void loginPage(ActionEvent actionEvent) {
         try {
-            Parent root = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("login.fxml")));
+            Parent root = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("loginPage.fxml")));
             Main.primaryStage.setTitle("Log In");
             Main.primaryStage.setScene(new Scene(root, 560, 400));
             Main.primaryStage.setResizable(false);
@@ -83,7 +83,7 @@ public class Controller implements Initializable {
 
     public void homePage() {
         try {
-            Parent root = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("home.fxml")));
+            Parent root = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("homePage.fxml")));
             Main.primaryStage.setTitle("Alone In The Forest");
             Main.primaryStage.setScene(new Scene(root, 560, 400));
             Main.primaryStage.setResizable(false);
@@ -96,7 +96,7 @@ public class Controller implements Initializable {
     public void signup(ActionEvent actionEvent) {
         try {
             System.out.println(getClass().toString());
-            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("register.fxml")));
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("registerPage.fxml")));
             Main.primaryStage.setTitle("Register");
             Main.primaryStage.setScene(new Scene(root, 560, 400));
             Main.primaryStage.setResizable(false);
@@ -117,7 +117,7 @@ public class Controller implements Initializable {
             System.out.println(""+st.executeUpdate(query));
             System.out.println(username);
             st.close();
-            Parent root = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("login.fxml")));
+            Parent root = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("loginPage.fxml")));
             Main.primaryStage.setTitle("Log In");
             Main.primaryStage.setScene(new Scene(root, 560, 400));
             Main.primaryStage.setResizable(false);
