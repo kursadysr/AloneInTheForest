@@ -1,10 +1,16 @@
 package main;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -53,5 +59,13 @@ public class Home implements Initializable {
         } catch (Exception e) {
             System.out.println("r");
         }
+    }
+
+    public void inventoryPage(ActionEvent actionEvent) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("inventoryPage.fxml"));
+        Stage stage = (Stage) usernameLabel.getScene().getWindow();
+        stage.setTitle("Home");
+        stage.setScene(new Scene(root, 560, 400));
+        stage.show();
     }
 }

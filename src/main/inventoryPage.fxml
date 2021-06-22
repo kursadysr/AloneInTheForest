@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.InventoryPage">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="560.0" pickOnBounds="true">
+      <image>
+         <Image url="@../images/background.png" />
+      </image>
+   </ImageView>
+      <FlowPane layoutX="28.0" layoutY="108.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(37, 150, 190, 0.4);">
+         <children>
+            <ImageView fx:id="item1" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="item2" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="item3" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="item4" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="item5" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="item6" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="item7" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="item8" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="item9" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="item10" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </FlowPane>
+   </children>
+</AnchorPane>
