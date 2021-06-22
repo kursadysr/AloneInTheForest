@@ -18,6 +18,7 @@ import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
     public static String passedUsername;
+
     @FXML
     private TextField usernameField;
     @FXML
