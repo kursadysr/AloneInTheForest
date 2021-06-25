@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.effect.Bloom?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.InventoryPage">
    <children>
@@ -13,20 +18,72 @@
          <Image url="@../images/background.png" />
       </image>
    </ImageView>
-      <FlowPane layoutX="28.0" layoutY="108.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(37, 150, 190, 0.4);">
+      <FlowPane layoutX="346.0" layoutY="186.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(37, 150, 190, 0.4);">
          <children>
-            <ImageView fx:id="item1" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="item2" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="item3" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="item4" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="item5" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="item6" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="item7" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="item8" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="item9" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="item10" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="item1" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#clicked" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="item2" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#clicked" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="item3" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#clicked" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="item4" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#clicked" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="item5" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#clicked" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="item6" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#clicked" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="item7" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#clicked" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="item8" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#clicked" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="item9" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#clicked" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="item10" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#clicked" pickOnBounds="true" preserveRatio="true" />
          </children>
       </FlowPane>
-      <Button fx:id="backButton" layoutX="28.0" layoutY="361.0" mnemonicParsing="false" onAction="#backButton" text="Button" />
+      <Button fx:id="backButton" layoutX="491.0" layoutY="14.0" mnemonicParsing="false" onAction="#backButton" text="Button" />
+      <Pane layoutX="14.0" layoutY="200.0" prefHeight="137.0" prefWidth="240.0">
+         <children>
+            <ProgressBar fx:id="energyProgressBar" layoutX="30.0" layoutY="110.0" prefHeight="15.0" prefWidth="200.0" progress="1.0" />
+            <ProgressBar fx:id="foodProgressBar" layoutX="30.0" layoutY="140.0" prefHeight="15.0" prefWidth="200.0" progress="1.0" />
+            <ProgressBar fx:id="waterProgressBar" layoutX="30.0" layoutY="170.0" prefHeight="15.0" prefWidth="200.0" progress="1.0" />
+            <ImageView fx:id="hearthIcon" fitHeight="20.0" fitWidth="20.0" layoutX="5.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/heart.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="5.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/atom.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="5.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/wheat.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="5.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/water.png" />
+               </image>
+            </ImageView>
+            <ProgressBar fx:id="healthProgressBar" layoutX="30.0" layoutY="80.0" prefHeight="15.0" prefWidth="200.0" progress="1.0" />
+            <Label fx:id="usernameLabel" alignment="CENTER" layoutX="42.0" layoutY="46.0" prefHeight="23.0" prefWidth="78.0" style="-fx-background-color: rgba(16, 10, 4, 0.59)rgba(16, 10, 4, 0.59) rgba(16, 10, 4, 0.59)rgba(16, 10, 4, 0.59); -fx-background-radius: 10;" text="Username" textAlignment="CENTER" textFill="#33ff00fc" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <effect>
+                  <Bloom />
+               </effect>
+            </Label>
+            <Label fx:id="dayLabel" alignment="CENTER" layoutX="160.0" layoutY="14.0" prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: rgba(16, 10, 4, 0.59)rgba(16, 10, 4, 0.59) rgba(16, 10, 4, 0.59)rgba(16, 10, 4, 0.59); -fx-background-radius: 10;" text="Day" textAlignment="CENTER" textFill="#33ff00fc" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <effect>
+                  <Bloom />
+               </effect>
+            </Label>
+            <Label fx:id="locationLabel" alignment="CENTER" layoutX="190.0" layoutY="45.0" prefHeight="25.0" prefWidth="40.0" style="-fx-background-color: rgba(16, 10, 4, 0.59)rgba(16, 10, 4, 0.59) rgba(16, 10, 4, 0.59)rgba(16, 10, 4, 0.59); -fx-background-radius: 10;" text="Location" textAlignment="CENTER" textFill="#33ff00fc" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <effect>
+                  <Bloom />
+               </effect>
+            </Label>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

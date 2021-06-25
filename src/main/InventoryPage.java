@@ -7,11 +7,16 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 
 import java.net.URL;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Objects;
 import java.util.ResourceBundle;
@@ -43,6 +48,24 @@ public class InventoryPage implements Initializable {
     private ImageView item10;
     @FXML
     private Button backButton;
+    @FXML
+    private ProgressBar healthProgressBar;
+    @FXML
+    private ProgressBar energyProgressBar;
+    @FXML
+    private ProgressBar foodProgressBar;
+    @FXML
+    private ProgressBar waterProgressBar;
+    @FXML
+    private ImageView hearthIcon;
+    @FXML
+    private Label usernameLabel;
+    @FXML
+    private AnchorPane anchorPane;
+    @FXML
+    private Label dayLabel;
+    @FXML
+    private Label locationLabel;
 
     private Image apple = new Image(String.valueOf(getClass().getResource("../images/items/apple.png")));
     private Image axe = new Image(String.valueOf(getClass().getResource("../images/items/axe.png")));
@@ -70,7 +93,6 @@ public class InventoryPage implements Initializable {
                     "group by item_name;";
             ResultSet result = st.executeQuery(query);
             while(result.next()){
-                System.out.println(result.getString("name") + result.getString("item_name") + result.getInt("count(item_name)"));
                 if(result.getString("item_name").equals("Apple")){
                     item1.setImage(apple);
                     item1.toBack();
@@ -106,6 +128,28 @@ public class InventoryPage implements Initializable {
         } catch (Exception e) {
             System.out.println(e);
         }
+        waterProgressBar.setStyle("-fx-accent: #0D9EFF;");
+        foodProgressBar.setStyle("-fx-accent: #FFC500;");
+        healthProgressBar.setStyle("-fx-accent: #B7101D;");
+        hearthIcon.setStyle("-fx-background-color: #B7101D;");
+        usernameLabel.setText(LoginPage.passedUsername);
+        dayLabel.setText("Day "+PlayerData.gameDay);
+        locationLabel.setText(""+PlayerData.location);
+        try {
+            PlayerData.getInfo();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        updateIndicators();
+    }
+
+    public void updateIndicators(){
+        healthProgressBar.setProgress((double) PlayerData.health / 100);
+        energyProgressBar.setProgress((double) PlayerData.energy / 100);
+        foodProgressBar.setProgress((double) PlayerData.food / 100);
+        waterProgressBar.setProgress((double) PlayerData.water / 100);
+        locationLabel.setText(PlayerData.location);
+        dayLabel.setText("Day "+PlayerData.gameDay);
     }
 
     public void backButton(ActionEvent actionEvent) {
@@ -119,5 +163,24 @@ public class InventoryPage implements Initializable {
             System.out.println("e");
 
         }
+    }
+
+    public void clicked(MouseEvent mouseEvent) throws SQLException {
+        ImageView clickedImage =(ImageView) mouseEvent.getPickResult().getIntersectedNode();
+
+        if (clickedImage.getImage().equals(apple)) {
+            PlayerData.getInfo();
+            PlayerData.food = PlayerData.food + 5;
+            PlayerData.setInfo();
+            updateIndicators();
+        }
+        if (clickedImage.getImage().equals(waterBottle)) {
+            PlayerData.getInfo();
+            PlayerData.water = PlayerData.water + 5;
+            PlayerData.setInfo();
+            updateIndicators();
+        }
+
+
     }
 }
