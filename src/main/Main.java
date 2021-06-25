@@ -32,7 +32,6 @@ public class Main extends Application {
     public static void main(String[] args) {
         try {
             db =  DriverManager.getConnection("jdbc:mariadb://sql5.freesqldatabase.com:3306/sql5413340?user=sql5413340&password=s6EJsVDr7n");
-            System.out.println("Successfully connected!");
         } catch (Exception e) {
             System.out.println("d");
         }

@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 
 import java.net.URL;
 import java.sql.ResultSet;
@@ -30,7 +31,7 @@ public class LoginPage implements Initializable {
     }
 
 
-    public void login(ActionEvent actionEvent) {
+    public void loginHandler(){
         String username = usernameField.getText();
         String password = passwordField.getText();
 
@@ -41,7 +42,6 @@ public class LoginPage implements Initializable {
             result.next();
             if (username.equals(result.getString("name")) && password.equals(result.getString("password"))) {
                 passedUsername = result.getString("name");
-                System.out.println(passedUsername);
                 homePage();
                 String toastMsg = "Successfully logged in";
                 int toastMsgTime = 3500; //3.5 seconds
@@ -67,6 +67,10 @@ public class LoginPage implements Initializable {
         } catch (Exception e) {
             System.out.println("e");
         }
+    }
+
+    public void login(ActionEvent actionEvent) {
+        loginHandler();
     }
 
     public void loginPage(ActionEvent actionEvent) {
@@ -95,7 +99,6 @@ public class LoginPage implements Initializable {
 
     public void signup(ActionEvent actionEvent) {
         try {
-            System.out.println(getClass().toString());
             Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("registerPage.fxml")));
             Main.primaryStage.setTitle("Register");
             Main.primaryStage.setScene(new Scene(root, 560, 400));
@@ -114,8 +117,7 @@ public class LoginPage implements Initializable {
         try {
             Statement st = Main.db.createStatement();
             String query = "INSERT INTO characters  (name, password) VALUES ('"+username+"', '"+password+"')";
-            System.out.println(""+st.executeUpdate(query));
-            System.out.println(username);
+            st.executeUpdate(query);
             st.close();
             Parent root = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("loginPage.fxml")));
             Main.primaryStage.setTitle("Log In");
@@ -132,5 +134,13 @@ public class LoginPage implements Initializable {
             System.out.println("e");
         }
 
+    }
+
+    public void keyPressed(KeyEvent keyEvent) {
+
+        switch (keyEvent.getCode()) {
+            case ENTER:
+                loginHandler();
+        }
     }
 }

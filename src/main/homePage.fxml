@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.HomePage">
+<AnchorPane fx:id="anchorPane" prefHeight="400.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.HomePage">
    <children>
       <ImageView fitHeight="400.0" fitWidth="560.0" pickOnBounds="true">
          <image>
@@ -32,7 +32,7 @@
             <Image url="@../images/rock6.png" />
          </image>
       </ImageView>
-      <Button layoutX="400.0" layoutY="200.0" minHeight="50.0" minWidth="125.0" mnemonicParsing="false" style="-fx-background-color: rgba(16, 10, 4, 0.59)rgba(16, 10, 4, 0.59); -fx-background-radius: 10;" text="Move" textFill="#95d115">
+      <Button layoutX="400.0" layoutY="200.0" minHeight="50.0" minWidth="125.0" mnemonicParsing="false" onAction="#move" style="-fx-background-color: rgba(16, 10, 4, 0.59)rgba(16, 10, 4, 0.59); -fx-background-radius: 10;" text="Move" textFill="#95d115">
          <font>
             <Font size="18.0" />
          </font>
@@ -52,7 +52,23 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Pane layoutY="190.0" prefHeight="200.0" prefWidth="240.0">
+      <ImageView fitHeight="56.0" fitWidth="90.0" layoutX="310.0" layoutY="157.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/lake.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="66.0" layoutX="207.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/rock3.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="59.0" fitWidth="58.0" layoutX="6.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/rock2.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="logoutButton" layoutX="489.0" layoutY="14.0" mnemonicParsing="false" onAction="#logoutButton" text="Log Out" />
+      <Pane layoutX="6.0" layoutY="199.0" prefHeight="200.0" prefWidth="240.0">
          <children>
             <ProgressBar fx:id="energyProgressBar" layoutX="30.0" layoutY="110.0" prefHeight="15.0" prefWidth="200.0" progress="1.0" />
             <ProgressBar fx:id="foodProgressBar" layoutX="30.0" layoutY="140.0" prefHeight="15.0" prefWidth="200.0" progress="1.0" />
@@ -78,7 +94,7 @@
                </image>
             </ImageView>
             <ProgressBar fx:id="healthProgressBar" layoutX="30.0" layoutY="80.0" prefHeight="15.0" prefWidth="200.0" progress="1.0" />
-            <Label fx:id="usernameLabel" alignment="CENTER" layoutX="81.0" layoutY="35.0" prefHeight="23.0" prefWidth="78.0" style="-fx-background-color: rgba(16, 10, 4, 0.59)rgba(16, 10, 4, 0.59) rgba(16, 10, 4, 0.59)rgba(16, 10, 4, 0.59); -fx-background-radius: 10;" text="Username" textAlignment="CENTER" textFill="#33ff00fc" textOverrun="CENTER_ELLIPSIS">
+            <Label fx:id="usernameLabel" alignment="CENTER" layoutX="42.0" layoutY="46.0" prefHeight="23.0" prefWidth="78.0" style="-fx-background-color: rgba(16, 10, 4, 0.59)rgba(16, 10, 4, 0.59) rgba(16, 10, 4, 0.59)rgba(16, 10, 4, 0.59); -fx-background-radius: 10;" text="Username" textAlignment="CENTER" textFill="#33ff00fc" textOverrun="CENTER_ELLIPSIS">
                <font>
                   <Font size="15.0" />
                </font>
@@ -86,23 +102,23 @@
                   <Bloom />
                </effect>
             </Label>
-            <ImageView fitHeight="59.0" fitWidth="58.0" layoutX="8.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/rock2.png" />
-               </image>
-            </ImageView>
+            <Label fx:id="dayLabel" alignment="CENTER" layoutX="160.0" layoutY="14.0" prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: rgba(16, 10, 4, 0.59)rgba(16, 10, 4, 0.59) rgba(16, 10, 4, 0.59)rgba(16, 10, 4, 0.59); -fx-background-radius: 10;" text="Day" textAlignment="CENTER" textFill="#33ff00fc" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <effect>
+                  <Bloom />
+               </effect>
+            </Label>
+            <Label fx:id="locationLabel" alignment="CENTER" layoutX="190.0" layoutY="45.0" prefHeight="25.0" prefWidth="40.0" style="-fx-background-color: rgba(16, 10, 4, 0.59)rgba(16, 10, 4, 0.59) rgba(16, 10, 4, 0.59)rgba(16, 10, 4, 0.59); -fx-background-radius: 10;" text="Location" textAlignment="CENTER" textFill="#33ff00fc" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <effect>
+                  <Bloom />
+               </effect>
+            </Label>
          </children>
       </Pane>
-      <ImageView fitHeight="56.0" fitWidth="90.0" layoutX="310.0" layoutY="157.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/lake.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="66.0" layoutX="207.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/rock3.png" />
-         </image>
-      </ImageView>
-      <Button fx:id="logoutButton" layoutX="489.0" layoutY="14.0" mnemonicParsing="false" onAction="#logoutButton" text="Log Out" />
    </children>
 </AnchorPane>
