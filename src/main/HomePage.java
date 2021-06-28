@@ -76,7 +76,7 @@ public class HomePage implements Initializable {
         updateIndicators();
     }
 
-    public void updateIndicators(){
+    public void updateIndicators() {
         healthProgressBar.setProgress((double) PlayerData.health / 100);
         energyProgressBar.setProgress((double) PlayerData.energy / 100);
         foodProgressBar.setProgress((double) PlayerData.food / 100);
@@ -110,7 +110,7 @@ public class HomePage implements Initializable {
         ft.setAutoReverse(true);
         ft.play();
 
-
+        PlayerData.getInfo();
         PlayerData.energy = PlayerData.energy + 45;
         PlayerData.gameDay = PlayerData.gameDay + 1;
         PlayerData.setInfo();
