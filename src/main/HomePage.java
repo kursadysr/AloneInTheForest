@@ -88,7 +88,7 @@ public class HomePage implements Initializable {
     public void inventoryPage(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("inventoryPage.fxml"));
         Stage stage = (Stage) usernameLabel.getScene().getWindow();
-        stage.setTitle("Home");
+        stage.setTitle("Inventory");
         stage.setScene(new Scene(root, 560, 400));
         stage.show();
     }
@@ -96,7 +96,7 @@ public class HomePage implements Initializable {
     public void logoutButton(ActionEvent actionEvent) throws IOException{
         Parent root = FXMLLoader.load(getClass().getResource("loginPage.fxml"));
         Stage stage = (Stage) usernameLabel.getScene().getWindow();
-        stage.setTitle("Home");
+        stage.setTitle("Login");
         stage.setScene(new Scene(root, 560, 400));
         stage.show();
     }
